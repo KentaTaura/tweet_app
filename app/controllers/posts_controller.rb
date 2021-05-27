@@ -1,10 +1,13 @@
 class PostsController < ApplicationController
   def index
-    @posts = [
-      "今日からProgateでRails",
-      "投稿一覧ページ作成中!"
-    ]
+    @posts = Post.all
   end
+  
   def new
   end
+
+  def show
+    @post = Post.find_by(id: params[:id])
+  end
+
 end
