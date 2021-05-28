@@ -3,7 +3,12 @@
 <div class="posts-index">
   <% @posts.each do |post| %>
     <div class="posts-index-item">
-      <%= link_to(post.content, "/posts/#{post.id}") %> 
+      <div class="mb-2">
+        <%= link_to(post.content, "/posts/#{post.id}") %> 
+      </div>
+      <div>
+        <%= post.created_at %> 
+      </div>
     </div>
   <% end %>
 </div>
