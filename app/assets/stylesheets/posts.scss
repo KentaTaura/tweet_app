@@ -33,6 +33,13 @@
     font-size: 0.8em;
     text-align: left;
   }
+  &__card-option {
+    letter-spacing: 2px;
+    text-align: right;
+    a {
+      text-decoration: none;
+    }
+  }
 }
 
 .post-new {
