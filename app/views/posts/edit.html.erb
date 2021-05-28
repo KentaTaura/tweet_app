@@ -2,6 +2,11 @@
 <div class="post-new">
   <%= form_tag("/posts/#{@post.id}/update") do %>
     <div class="form-floating mb-3 post-new__form">
+      <% @post.errors.full_messages.each do |message| %>
+        <div class="alert alert-warning">
+          <%= message %>
+        </div>
+      <% end %>
       <textarea name="content" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 200px"><%= @post.content %></textarea>
     </div>
     <%= link_to("キャンセル", "/posts/#{@post.id}", {class: "btn btn-secondary btn-lg me-5"}) %>
