@@ -1,0 +1,18 @@
+<h1 class="post-show__title">投稿詳細</h1>
+<div class="card post-show__card">
+  <div class="card-body">
+    <div class="post-show__card-text">
+      <%= @post.content %>
+    </div>
+    <div class="row">
+      <div class="col post-show__card-time">
+        <%= @post.created_at %>
+      </div>
+      <div class="col post-show__card-option">
+        <%= link_to("編集", "/posts/#{@post.id}/edit", {class: "me-3"}) %>
+        <%= link_to("削除", "/posts/#{@post.id}/destroy", {method: "post"}) %>
+      </div>
+    </div>
+    
+  </div>
+</div>

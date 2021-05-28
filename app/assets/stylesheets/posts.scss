@@ -1,3 +1,56 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.posts-index {
+  color: #000;
+  &-item {
+    padding: 20px 30px;
+    background-color: white;
+    overflow: hidden;
+    // box-shadow: 0 2px 6px #c1ced7;
+    border: 1px solid #eee;
+    text-shadow: none;
+  }
+}
+
+.post-show {
+  &__title {
+    font-size: 1.5em;
+    margin-bottom: 2em;
+  }
+  &__card {
+    color: #000;
+    text-shadow: none;
+  }
+  &__card-text {
+    font-size: 1.5em;
+    text-align: left;
+    padding-bottom: 2em;
+  }
+  &__card-time {
+    font-size: 0.8em;
+    text-align: left;
+  }
+  &__card-option {
+    letter-spacing: 2px;
+    text-align: right;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.post-new {
+  &__form {
+    color: #555;
+    text-shadow: none;
+  }
+  .form-control {
+    font-size: 1.5em;
+  }
+}
+
+.no-text-shadow {
+  text-shadow: none;
+}

@@ -1,2 +1,19 @@
 <h1>投稿一覧</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<% if flash[:notice] %>
+  <div class="alert alert-info alert-dismissible fade show my-4 no-text-shadow" role="alert">
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="閉じる"></button>
+    <%= flash[:notice] %>
+  </div>
+<% end %>
+<div class="posts-index">
+  <% @posts.each do |post| %>
+    <div class="posts-index-item">
+      <div class="mb-2">
+        <%= link_to(post.content, "/posts/#{post.id}") %> 
+      </div>
+      <div>
+        <%= post.created_at %> 
+      </div>
+    </div>
+  <% end %>
+</div>

@@ -1,25 +1,41 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>TweetApp</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+<head>
+  <title>TweetApp</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
 
-  <body>
-  <header>
-    <div class="logo">
-      <%= link_to("Tweet App", "/") %>
-    </div>
-    <ul>
-      <li><%= link_to("Tweet appとは", "/about")%></li>
-      <li><%= link_to("投稿一覧", "/posts/index")%></li>
-      <li><%= link_to("新規投稿", "/posts/new")%></li>
-    </ul>
-  </header>
-    <%= yield %>
-  </body>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body class="d-flex vh-100 text-center text-white bg-dark">
+  <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+    <header class="mb-auto">
+      <div>
+        <h3 class="float-md-start mb-0">Tweet app</h3>
+        <nav class="nav nav-masthead justify-content-center float-md-end">
+          <%# <a class="" aria-current="page" href="#"></a> %>
+          <%= link_to("Home", "/", {class: "nav-link"} ) %>
+          <%= link_to("Tweet appとは", "/about", {class: "nav-link"})%>
+          <%= link_to("投稿一覧", "/posts/index", {class: "nav-link"})%>
+          <%= link_to("新規投稿", "/posts/new", {class: "nav-link"})%>
+        </nav>
+      </div>
+    </header>
+
+    <main class="px-3">
+      <%= yield %>
+    </main>
+
+    <footer class="mt-auto text-white-50">
+      <p>Twitter: <a href="https://twitter.com/NaviKenta" target="_blank" rel="noopener noreferrer" class="text-white">@NaviKenta</a></p>
+    </footer>
+  </div>
+
+
+
+</body>
+
 </html>
