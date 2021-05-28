@@ -1,0 +1,9 @@
+<h1>編集</h1>
+<div class="post-new">
+  <%= form_tag("/posts/#{@post.id}/update") do %>
+    <div class="form-floating mb-3 post-new__form">
+      <textarea name="content" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 200px"><%= @post.content %></textarea>
+    </div>
+    <button type="submit" class="btn btn-info btn-lg">保存する</button>
+  <% end %>
+</div>
